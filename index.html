@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>פניקס | כאן מתחילים מחדש</title>
+<meta name="description" content="ליווי אישי לבניית שגרה יציבה, חיזוק הביטחון האישי ושינוי הדרגתי שמחזיק לאורך זמן. צעדים ברורים, יחס אנושי וסודיות מלאה. לתיאום פגישת ייעוץ.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Noto+Sans+Hebrew:wght@300;400;500;600;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ===================================================================
+   PHOENIX - LANDING PAGE
+   Mobile first. גריד של 2 בשורה תמיד. אין גלילה אופקית
+   =================================================================== */
+:root{
+  --purple:#685DA1;
+  --grad:linear-gradient(90deg,#5E60CE 0%,#520082 100%);
+  --orange:#FF993E;
+  --green:#25D366;
+  --gold:#C9A227;
+  --gray:#F3F3F3;
+  --gray2:#E8E8EB;
+  --ink:#000;
+  --body:#1D1D1B;
+  --white:#fff;
+  --hero-txt:#F0EBF3;
+  --z-nav:50;
+  --z-bar:60;
+}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html,body{max-width:100%;overflow-x:clip}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Noto Sans Hebrew","Rubik",Arial,sans-serif;color:var(--body);background:var(--white);font-size:16px;line-height:1.55}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:"Secular One","Noto Sans Hebrew",Arial,sans-serif;font-weight:400;color:var(--ink)}
+:focus-visible{outline:3px solid #520082;outline-offset:3px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* טיפוגרפיה - בסיס נייד */
+.h-hero{font-size:40px;line-height:46px;color:var(--hero-txt);text-align:center}
+.h-sub{font-size:21px;line-height:29px;color:var(--white);font-weight:500;text-align:center}
+.h-sec{font-size:32px;line-height:38px;text-align:center}
+.h-card{font-size:19px;line-height:25px;text-align:center}
+.p-lead{font-size:17px;line-height:27px;text-align:center}
+.p-card{font-size:14px;line-height:21px;text-align:center}
+
+.wrap{width:100%;max-width:1140px;margin:0 auto;padding:0 16px}
+.sec{padding:34px 0}
+.center{text-align:center}
+.mt12{margin-top:12px}.mt16{margin-top:16px}.mt24{margin-top:24px}
+
+/* גריד קבוע של 2 בשורה */
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+
+/* כפתורים */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:14px 26px;border:0;border-radius:100px;cursor:pointer;background-image:var(--grad);color:var(--white);font-size:17px;font-weight:500;line-height:22px;text-align:center;transition:filter .2s ease;box-shadow:0 8px 20px rgba(82,0,130,.25)}
+.btn:hover{filter:brightness(1.12)}
+.btn-dark{background-image:none;background:#000;border-radius:20px;font-size:19px}
+.btn-full{width:100%}
+.btn-sm{min-height:44px;padding:10px 16px;font-size:14px;white-space:nowrap}
+
+/* פס טלפונים */
+.topbar{background:var(--purple);color:var(--white);padding:10px 0}
+.topbar ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:2px 14px}
+.topbar a{display:inline-flex;align-items:center;gap:5px;direction:ltr;font-family:"Rubik",Arial,sans-serif;font-weight:500;font-size:14px;min-height:30px;white-space:nowrap}
+.topbar svg{fill:#B6F0C8;flex:none}
+
+/* הדר */
+.head{position:sticky;top:0;z-index:var(--z-nav);background:var(--white);box-shadow:0 1px 10px rgba(0,0,0,.08)}
+.head-in{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 16px;max-width:1140px;margin:0 auto}
+.logo{flex:none}
+.logo img{width:104px}
+.head .btn-sm{flex:none;margin-inline-start:auto}
+.nav{background:var(--white);border-top:1px solid #EFEFEF;order:3;flex-basis:100%;margin-inline:-16px}
+.nav ul{list-style:none;display:flex;gap:14px;overflow-x:auto;padding:6px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.nav ul::-webkit-scrollbar{display:none}
+.nav a{white-space:nowrap;font-size:14px;font-weight:500;min-height:34px;display:inline-flex;align-items:center}
+.nav a:hover{color:var(--purple)}
+
+/* הירו עם וידאו */
+.hero{position:relative;min-height:520px;display:grid;align-items:center;isolation:isolate;overflow:hidden}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.9;background:linear-gradient(103deg,rgba(0,0,0,.72) 27%,rgba(0,0,0,.48) 100%)}
+.hero-in{padding:48px 16px;text-align:center}
+
+.about-copy{max-width:820px;margin:0 auto}
+
+/* כרטיס לבן שעולה על ההירו */
+.overlap{background:var(--white);border-radius:36px 36px 0 0;margin-top:-36px;position:relative;z-index:1;padding:34px 0 30px}
+
+/* ====== רצועת תמונות שרצה ====== */
+.strip{overflow:hidden;direction:ltr;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.strip-track{display:flex;width:max-content;animation:run 38s linear infinite}
+.strip:hover .strip-track{animation-play-state:paused}
+.strip img{width:230px;height:160px;object-fit:cover;border-radius:18px;flex:none;margin-inline-end:12px}
+@keyframes run{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* כרטיס */
+.card{background:var(--white);border-radius:20px;box-shadow:0 8px 22px rgba(0,0,0,.09);overflow:hidden;display:flex;flex-direction:column}
+.card .pad{padding:14px 12px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.ico{width:46px;height:46px;border-radius:14px;background:rgba(104,93,161,.12);display:grid;place-items:center;margin:0 auto}
+.ico svg{width:24px;height:24px;fill:var(--purple)}
+
+/* כרטיס תמונה */
+.pcard{border-radius:24px;padding:0 12px 12px;min-height:300px;display:flex;align-items:flex-end;background-size:cover;background-position:center}
+.pcard .inner{background:rgba(253,253,253,.92);border-radius:18px;padding:12px;width:100%}
+
+/* מסמכים */
+.doc{background:var(--white);border-radius:16px;box-shadow:0 8px 22px rgba(0,0,0,.09);padding:10px;display:flex;flex-direction:column;gap:8px}
+.doc img{width:100%;aspect-ratio:3/4;object-fit:contain;background:#FBFBFD;border:1px solid #ECECF1;border-radius:10px;padding:6px}
+.doc figcaption{font-size:13px;line-height:18px;text-align:center;color:#55555F}
+
+/* צוות */
+.person{background:var(--white);border-radius:20px;box-shadow:0 8px 22px rgba(0,0,0,.09);overflow:hidden;display:flex;flex-direction:column}
+.person img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top center;background:#EFEFF4}
+.person .pad{padding:12px 10px 16px;text-align:center;display:flex;flex-direction:column;gap:4px;flex:1}
+.person .name{font-family:"Secular One",Arial,sans-serif;font-size:16px;line-height:22px;color:var(--ink)}
+.person .role{font-size:13px;line-height:18px;color:#55555F}
+
+/* טופס */
+.formsec{background:#2A2450;color:var(--white)}
+.formsec .h-sec{color:var(--white)}
+.formsec .p-lead{color:#E6E1F2}
+.form{max-width:520px;margin:20px auto 0;display:grid;gap:10px}
+.form input,.form textarea{width:100%;min-height:52px;padding:14px 16px;border:0;border-radius:12px;font-size:16px;background:var(--white);color:var(--body);direction:rtl;text-align:right}
+.form input::placeholder,.form textarea::placeholder{text-align:right;direction:rtl}
+.form textarea{min-height:104px;resize:vertical}
+.form .err{outline:2px solid #FF6B6B}
+.msg{display:none;background:#D5F4E4;color:#0F5C34;border-radius:12px;padding:14px;font-weight:500;text-align:center}
+.msg.show{display:block}
+.mini{font-size:13px;text-align:center;color:#D8D2EA}
+
+/* ראיונות */
+.yt{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;cursor:pointer;border:0;padding:0;width:100%}
+.yt img{width:100%;height:100%;object-fit:cover;opacity:.85}
+.yt .play{position:absolute;inset:0;display:grid;place-items:center}
+.yt .play span{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center}
+.yt iframe{width:100%;height:100%;border:0}
+
+/* ציטוטים */
+.quote{background:var(--white);border-radius:20px;padding:16px;box-shadow:0 8px 22px rgba(0,0,0,.09)}
+.quote p{font-size:14px;line-height:21px;margin-bottom:10px}
+.quote .who{color:var(--purple);font-weight:700;font-size:13px}
+.stars{color:#E5A100;letter-spacing:1px;font-size:14px;margin-bottom:6px}
+
+/* ============ פוטר ============ */
+.foot{background:#2A2450;color:#D9D4EA;padding:34px 0 96px;font-size:15px}
+.foot-cols{display:grid;gap:28px}
+.foot h3{font-family:"Secular One",Arial,sans-serif;font-weight:400;color:#fff;font-size:20px;line-height:26px;margin-bottom:12px}
+.foot ul{list-style:none;display:grid;gap:10px}
+.foot li{display:flex;gap:9px;align-items:flex-start;line-height:22px}
+.foot a{transition:color .2s ease}
+.foot a:hover{color:var(--orange)}
+.foot svg{fill:var(--orange);flex:none;margin-top:3px}
+.foot .tag{line-height:24px;max-width:420px}
+.socials{display:flex;gap:10px;margin-top:16px}
+.socials a{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center}
+.socials a:hover{background:var(--orange)}
+.socials svg{fill:#fff;width:20px;height:20px;margin:0}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.15);margin-top:28px;padding-top:18px;display:flex;flex-direction:column;align-items:center;gap:14px;font-size:13px;color:#ADA6C7;text-align:center}
+.credit{display:flex;align-items:center;gap:9px;color:#fff}
+.credit img{width:34px;height:auto}
+.credit span{font-size:13px;font-weight:500;letter-spacing:.02em}
+
+/* ============ הודעת קוקיז ============ */
+.cookie{
+  position:fixed;inset-inline:0;bottom:0;z-index:80;background:#fff;
+  box-shadow:0 -6px 24px rgba(0,0,0,.18);padding:16px 16px calc(16px + env(safe-area-inset-bottom));
+  display:none;gap:12px;flex-direction:column;font-size:14px;line-height:21px;color:#333
+}
+.cookie.show{display:flex}
+.cookie a{color:var(--purple);text-decoration:underline}
+.cookie .acts{display:flex;gap:10px}
+.cookie button{flex:1;min-height:46px;border-radius:100px;border:0;cursor:pointer;font-size:15px;font-weight:600;font-family:inherit}
+.cookie .ok{background-image:var(--grad);color:#fff}
+.cookie .no{background:#EFEFF4;color:#333}
+
+/* ============ נגן מוזיקת רקע ============ */
+.sound{
+  position:fixed;inset-inline-start:14px;bottom:66px;z-index:65;
+  width:52px;height:52px;border-radius:50%;border:0;cursor:pointer;
+  background-image:var(--grad);color:#fff;display:grid;place-items:center;
+  box-shadow:0 8px 20px rgba(82,0,130,.35);transition:filter .2s ease
+}
+.sound:hover{filter:brightness(1.15)}
+.sound svg{width:24px;height:24px;fill:#fff}
+.sound .on{display:none}
+.sound[aria-pressed="true"] .on{display:block}
+.sound[aria-pressed="true"] .off{display:none}
+.sound .ring{position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(104,93,161,.45);opacity:0}
+.sound[aria-pressed="true"] .ring{opacity:1;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.9);opacity:.7}100%{transform:scale(1.25);opacity:0}}
+
+/* פס פעולה תחתון */
+.bar{position:fixed;bottom:0;inset-inline:0;z-index:var(--z-bar);display:grid;grid-template-columns:repeat(3,1fr);height:52px}
+.bar a{display:flex;align-items:center;justify-content:center;gap:6px;color:var(--white);font-size:14px;font-weight:600}
+.bar .w{background:var(--green)}
+.bar .p{background:var(--orange)}
+.bar .m{background:var(--purple)}
+.bar svg{width:20px;height:20px;fill:var(--white)}
+
+/* ===================== 768 ===================== */
+@media(min-width:768px){
+  body{font-size:18px}
+  .sec{padding:56px 0}
+  .grid2{gap:24px}
+  .h-hero{font-size:64px;line-height:70px}
+  .h-sub{font-size:28px;line-height:38px}
+  .h-sec{font-size:47px;line-height:52px}
+  .h-card{font-size:26px;line-height:32px}
+  .p-lead{font-size:19px;line-height:29px}
+  .p-card{font-size:16px;line-height:24px}
+  .hero{min-height:630px}
+  .overlap{border-radius:60px 60px 0 0;padding:52px 0 44px}
+  .pcard{min-height:408px;border-radius:40px;padding:0 20px 20px}
+  .pcard .inner{border-radius:25px;padding:15px}
+  .strip img{width:340px;height:230px;border-radius:24px;margin-inline-end:24px}
+  .quote p{font-size:17px;line-height:26px}
+  .person .name{font-size:20px;line-height:26px}
+  .person .role{font-size:15px;line-height:21px}
+  .topbar a{font-size:17px}
+  .logo img{width:170px}
+  .nav a{font-size:16px}
+  .foot-cols{grid-template-columns:1.4fr 1fr;gap:44px}
+  .foot-bottom{flex-direction:row;justify-content:space-between;text-align:start}
+  .bar{display:none}
+  .foot{padding-bottom:40px}
+  .sound{bottom:22px;inset-inline-start:22px}
+  .cookie{inset-inline:auto 20px;bottom:20px;max-width:420px;border-radius:18px;padding:20px}
+}
+
+/* ===================== 1024 ===================== */
+@media(min-width:1024px){
+  .sec{padding:78px 0}
+  .h-hero{font-size:78px;line-height:84px}
+  .h-sec{font-size:52px;line-height:58px}
+  .h-card{font-size:24px;line-height:30px}
+
+  /* הדר בשורה אחת */
+  .head-in{flex-wrap:nowrap;gap:24px;padding:10px 24px}
+  .logo img{width:150px}
+  .nav{order:2;flex-basis:auto;border:0;margin-inline:0;margin-inline-start:auto}
+  .nav ul{overflow:visible;padding:0;gap:22px}
+  .nav a{font-size:16px}
+  .head .btn-sm{order:3;margin-inline-start:0;font-size:16px;padding:12px 24px;min-height:48px}
+
+  .hero{min-height:680px}
+  .hero-in{max-width:900px;margin:0 auto}
+  .overlap{padding:64px 0 52px}
+  .about-copy{max-width:860px}
+
+  /* גרידים */
+  .grid2{max-width:1000px;margin-inline:auto;gap:28px}
+  .g-people,.g-docs{grid-template-columns:repeat(4,minmax(0,1fr));max-width:1140px;gap:22px}
+  .g-videos{max-width:1140px}
+  .pcard{min-height:440px}
+  .strip img{width:400px;height:260px;margin-inline-end:24px}
+  .person .name{font-size:19px;line-height:25px}
+  .person .role{font-size:14px;line-height:20px}
+  .doc figcaption{font-size:14px}
+}
+
+/* ===================== 1280 ===================== */
+@media(min-width:1280px){
+  .grid2{max-width:1080px}
+  .g-people,.g-docs,.g-videos{max-width:1140px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .strip{overflow-x:auto}
+  .strip-track{width:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== פס טלפונים ==================== -->
+<div class="topbar">
+  <div class="wrap">
+    <ul>
+      <li><a href="tel:+972528437690"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11 11 0 003.5.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11 11 0 00.56 3.5 1 1 0 01-.25 1z"/></svg>052-8437690</a></li>
+      <li><a href="tel:+972523873235"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11 11 0 003.5.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11 11 0 00.56 3.5 1 1 0 01-.25 1z"/></svg>052-3873235</a></li>
+      <li><a href="tel:+972544672866"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11 11 0 003.5.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11 11 0 00.56 3.5 1 1 0 01-.25 1z"/></svg>054-4672866</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== הדר ==================== -->
+<header class="head">
+  <div class="head-in">
+    <a class="logo" href="#top" aria-label="פניקס">
+      <img src="https://phoenix-rehab.com/wp-content/uploads/2023/03/logo_he.d110a0.webp" alt="לוגו פניקס" width="189" height="83">
+    </a>
+    <a class="btn btn-sm" href="#lead">לתיאום פגישה</a>
+    <nav class="nav" aria-label="ניווט ראשי">
+      <ul>
+        <li><a href="#top">ראשי</a></li>
+        <li><a href="#about">אודות</a></li>
+        <li><a href="#docs">מסמכים</a></li>
+        <li><a href="#services">שירותים</a></li>
+        <li><a href="#team">הצוות</a></li>
+        <li><a href="#interviews">ראיונות</a></li>
+        <li><a href="#contact">צור קשר</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ==================== הירו עם וידאו ==================== -->
+<section class="hero" id="top">
+  <video autoplay muted loop playsinline preload="metadata"
+         poster="https://phoenix-rehab.com/wp-content/uploads/elementor/thumbs/DOR_2562-scaled-qkv9gbtigz3avie16q6rusk95uvu7dxhgj2pbvcwg0.jpg">
+    <source src="https://zennewrr.ussl.co/wp-content/uploads/2026/02/background.mp4" type="video/mp4">
+  </video>
+  <div class="hero-in">
+    <h1 class="h-hero">כאן מתחילים מחדש</h1>
+    <h2 class="h-sub mt12">חוזרים לשלוט בחיים ובונים שינוי שמחזיק</h2>
+    <div class="mt24">
+      <a class="btn" href="#lead">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M14 8l-4 4 4 4"/></svg>
+        לתיאום פגישת ייעוץ
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== אודות ==================== -->
+<section class="overlap" id="about">
+  <div class="wrap">
+    <div class="about-copy">
+        <h2 class="h-sec">שינוי אמיתי מתחיל בהחלטה אחת</h2>
+        <p class="p-lead mt16">
+          המקום שלנו הוא מרחב לליווי אישי ולבניית דרך חדשה. כאן כל אחד מקבל יחס אישי
+          והכוונה מעשית ליצירת הרגלים טובים יותר, חיזוק תחושת השליטה ובניית שגרה מאוזנת.
+        </p>
+        <p class="p-lead mt16">
+          אנחנו מאמינים בהתקדמות ברורה, בגישה אנושית ובצעדים פרקטיים שמאפשרים שינוי אמיתי
+          בחיי היום יום.
+        </p>
+        <div class="center mt24"><a class="btn" href="#lead">לתיאום פגישת ייעוץ</a></div>
+    </div>
+  </div>
+
+  <!-- רצועת תמונות רצה -->
+  <div class="strip mt24" aria-label="תמונות מהמקום">
+    <div class="strip-track">
+      <img src="https://phoenix-rehab.com/wp-content/uploads/2026/05/Untitled-1-22-768x436.webp" alt="הכניסה והגינה" loading="lazy">
+      <img src="https://phoenix-rehab.com/wp-content/uploads/2024/03/DOR_2561-scaled.b197b0.webp" alt="פינת ישיבה מקורה" loading="lazy">
+      <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/Untitled-27.png" alt="בריכה בחצר" loading="lazy">
+      <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/Untitled-25.png" alt="פינת ישיבה בחצר" loading="lazy">
+      <img src="https://phoenix-rehab.com/wp-content/uploads/elementor/thumbs/DOR_2562-scaled-qkv9gbtigz3avie16q6rusk95uvu7dxhgj2pbvcwg0.jpg" alt="המבנה מבחוץ" loading="lazy">
+      <!-- שכפול לצורך גלילה רציפה -->
+      <img src="https://phoenix-rehab.com/wp-content/uploads/2026/05/Untitled-1-22-768x436.webp" alt="" aria-hidden="true" loading="lazy">
+      <img src="https://phoenix-rehab.com/wp-content/uploads/2024/03/DOR_2561-scaled.b197b0.webp" alt="" aria-hidden="true" loading="lazy">
+      <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/Untitled-27.png" alt="" aria-hidden="true" loading="lazy">
+      <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/Untitled-25.png" alt="" aria-hidden="true" loading="lazy">
+      <img src="https://phoenix-rehab.com/wp-content/uploads/elementor/thumbs/DOR_2562-scaled-qkv9gbtigz3avie16q6rusk95uvu7dxhgj2pbvcwg0.jpg" alt="" aria-hidden="true" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ==================== מה אנחנו מספקים ==================== -->
+<section class="sec" style="background:var(--gray)">
+  <div class="wrap">
+    <h2 class="h-sec">מה אנחנו מספקים למבקרים שלנו</h2>
+    <div class="grid2 mt24">
+      <article class="card">
+        <div class="pad">
+          <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-5 0-9 2.5-9 5.5V22h18v-2.5c0-3-4-5.5-9-5.5z"/></svg></span>
+          <h3 class="h-card">ליווי אישי ומקצועי</h3>
+          <p class="p-card">מלווה אישי שנמצא איתכם לאורך כל הדרך, עם מענה זמין והכוונה מעשית בכל שלב.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="pad">
+          <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v9a3 3 0 003 3v8h2v-8a3 3 0 003-3V2h-2v7h-1V2h-2v7H9V2H7zm11 0c-1.7 1.6-2.5 4-2.5 6.5 0 2 .8 3.5 2 4.2V22h2V2h-1.5z"/></svg></span>
+          <h3 class="h-card">תזונה בריאה וטעימה</h3>
+          <p class="p-card">תפריט יומי מאוזן שמותאם אישית, עם דגש על אנרגיה יציבה ותחושה טובה לאורך היום.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="pad">
+          <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1L3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4zm0 10.5h7c-.5 4.1-3.2 7.9-7 9V11.5z"/></svg></span>
+          <h3 class="h-card">סודיות מלאה</h3>
+          <p class="p-card">כל מה שנאמר נשאר בינינו. דיסקרטיות מוחלטת מהשיחה הראשונה ועד סוף הדרך.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="pad">
+          <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L2 12h3v9h6v-6h2v6h6v-9h3L12 3z"/></svg></span>
+          <h3 class="h-card">תנאי מחיה נוחים</h3>
+          <p class="p-card">חדרים מרווחים, סביבה שקטה ופינות ישיבה שמאפשרות מנוחה אמיתית וזמן לעצמכם.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== תחומי צמיחה ====================
+     תמונות מותאמות לתוכן. אין כאן פורטרטים של הצוות -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <h2 class="h-sec">תחומי צמיחה אישית</h2>
+    <div class="grid2 mt24">
+      <article class="pcard" style="background-image:linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.18)),url('https://phoenix-rehab.com/wp-content/uploads/2024/03/DOR_2561-scaled.b197b0.webp')">
+        <div class="inner">
+          <h3 class="h-card">איזון וחיזוק אורח חיים</h3>
+        </div>
+      </article>
+      <article class="pcard" style="background-image:linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.18)),url('https://phoenix-rehab.com/wp-content/uploads/2023/08/A05A4008-Dmitriy-Green-photography-972546800925-1.webp')">
+        <div class="inner">
+          <h3 class="h-card">שינוי דפוסים והרגלים</h3>
+        </div>
+      </article>
+      <article class="pcard" style="background-image:linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.18)),url('https://phoenix-rehab.com/wp-content/uploads/2026/06/Untitled-25.png')">
+        <div class="inner">
+          <h3 class="h-card">בניית הרגלים חדשים</h3>
+        </div>
+      </article>
+      <article class="pcard" style="background-image:linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.18)),url('https://phoenix-rehab.com/wp-content/uploads/2026/06/Untitled-27.png')">
+        <div class="inner">
+          <h3 class="h-card">חזרה לשגרה יציבה</h3>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== טופס ראשי ==================== -->
+<section class="sec formsec" id="lead">
+  <div class="wrap">
+    <h2 class="h-sec">הצעד הראשון מתחיל בשיחה</h2>
+    <p class="p-lead mt16">השאירו פרטים, ואנחנו ניצור איתכם קשר</p>
+    <form class="form leadform" novalidate>
+      <label class="sr-only" for="f1-name">שם מלא</label>
+      <input id="f1-name" name="name" type="text" placeholder="מה השם שלך?" autocomplete="name" required>
+      <label class="sr-only" for="f1-phone">טלפון</label>
+      <input id="f1-phone" name="phone" type="tel" placeholder="טלפון" autocomplete="tel" inputmode="tel" required>
+      <label class="sr-only" for="f1-mail">אימייל</label>
+      <input id="f1-mail" name="email" type="email" placeholder="אימייל" autocomplete="email">
+      <label class="sr-only" for="f1-msg">ההודעה שלך</label>
+      <textarea id="f1-msg" name="message" placeholder="ההודעה שלך"></textarea>
+      <button class="btn btn-dark btn-full" type="submit">שליחה</button>
+      <p class="mini">הפרטים נשמרים בדיסקרטיות מלאה</p>
+      <div class="msg" role="status">תודה, הפרטים התקבלו. נחזור אליכם בהקדם.</div>
+    </form>
+  </div>
+</section>
+
+<!-- ==================== מסמכים ====================
+     תעודות אמיתיות מהאתר. להחליף בסריקות שתשלח -->
+<section class="sec" id="docs" style="background:var(--gray)">
+  <div class="wrap">
+    <h2 class="h-sec">מסמכים ואישורים</h2>
+    <p class="p-lead mt16">כל האישורים פתוחים לעיון, בשקיפות מלאה</p>
+    <div class="grid2 g-docs mt24">
+      <figure class="doc">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/2.webp" alt="תעודה לרישומה של עמותה" loading="lazy">
+        <figcaption>תעודת רישום עמותה</figcaption>
+      </figure>
+      <figure class="doc">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/1-1.webp" alt="אישור רשמי" loading="lazy">
+        <figcaption>אישור רשמי</figcaption>
+      </figure>
+      <figure class="doc">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/4-5.webp" alt="תעודת חבר באיגוד הבינלאומי" loading="lazy">
+        <figcaption>חברות באיגוד הבינלאומי</figcaption>
+      </figure>
+      <figure class="doc">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/6.webp" alt="תעודת הסמכה מקצועית" loading="lazy">
+        <figcaption>תעודת הסמכה</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== הצוות ==================== -->
+<section class="sec" id="team">
+  <div class="wrap">
+    <h2 class="h-sec">הצוות שלנו</h2>
+    <p class="p-lead mt16">אנשי מקצוע מנוסים שמלווים אתכם צעד אחר צעד</p>
+    <div class="grid2 g-people mt24">
+      <article class="person">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/05/7.webp" alt="זינוביי פוייגל" loading="lazy">
+        <div class="pad"><span class="name">זינוביי פוייגל</span><span class="role">מנהל פניקס</span></div>
+      </article>
+      <article class="person">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/2-1.webp" alt="קרפנקו יבגני" loading="lazy">
+        <div class="pad"><span class="name">קרפנקו יבגני</span><span class="role">מנהל</span></div>
+      </article>
+      <article class="person">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/15.webp" alt="ד״ר אילנה שטיינדל" loading="lazy">
+        <div class="pad"><span class="name">ד״ר אילנה שטיינדל</span><span class="role">פסיכיאטרית מומחית לתחלואה כפולה</span></div>
+      </article>
+      <article class="person">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/1-2.webp" alt="ד״ר לאוניד שיינין" loading="lazy">
+        <div class="pad"><span class="name">ד״ר לאוניד שיינין</span><span class="role">פסיכיאטר נרקולוג, PhD במדעי הרפואה</span></div>
+      </article>
+      <article class="person">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/05/3.webp" alt="ד״ר ילנה לוגש" loading="lazy">
+        <div class="pad"><span class="name">ד״ר ילנה לוגש</span><span class="role">פסיכיאטרית מומחית</span></div>
+      </article>
+      <article class="person">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/WhatsApp-Image-2026-02-10-at-14.37.28-2-scaled-1.webp" alt="ד״ר יששכר הרמן" loading="lazy">
+        <div class="pad"><span class="name">ד״ר יששכר הרמן</span><span class="role">פסיכיאטר מומחה</span></div>
+      </article>
+      <article class="person">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/05/8.webp" alt="ירון אבישר" loading="lazy">
+        <div class="pad"><span class="name">ירון אבישר</span><span class="role">עובד סוציאלי</span></div>
+      </article>
+      <article class="person">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/16.webp" alt="אפרת דור גרנות" loading="lazy">
+        <div class="pad"><span class="name">אפרת דור גרנות</span><span class="role">מנחת פסיכודרמה</span></div>
+      </article>
+      <article class="person">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/4.webp" alt="איגור גרשקוביץ׳" loading="lazy">
+        <div class="pad"><span class="name">איגור גרשקוביץ׳</span><span class="role">מדריך אישי</span></div>
+      </article>
+      <article class="person">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/5-2.webp" alt="אלכסנדר אויסטרך" loading="lazy">
+        <div class="pad"><span class="name">אלכסנדר אויסטרך</span><span class="role">מדריך אישי</span></div>
+      </article>
+      <article class="person">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/6-1.webp" alt="אלינה פילמוס" loading="lazy">
+        <div class="pad"><span class="name">אלינה פילמוס</span><span class="role">מדריכה אישית</span></div>
+      </article>
+      <article class="person">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/9.webp" alt="סטניסלב נפתלייב" loading="lazy">
+        <div class="pad"><span class="name">סטניסלב נפתלייב</span><span class="role">מדריך אישי</span></div>
+      </article>
+      <article class="person">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/06/14.webp" alt="אוסרי רוקטלישווילי" loading="lazy">
+        <div class="pad"><span class="name">אוסרי רוקטלישווילי</span><span class="role">מדריך אישי</span></div>
+      </article>
+      <article class="person">
+        <img src="https://phoenix-rehab.com/wp-content/uploads/2026/05/11.webp" alt="קיטובסקיי איגור" loading="lazy">
+        <div class="pad"><span class="name">קיטובסקיי איגור</span><span class="role">שף</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ראיונות ==================== -->
+<section class="sec" id="interviews" style="background:var(--gray)">
+  <div class="wrap">
+    <h2 class="h-sec">ראיונות</h2>
+    <div class="grid2 g-videos mt24">
+      <button class="yt" data-id="8bmOfvhRrRE" aria-label="נגן ראיון ראשון">
+        <img src="https://i.ytimg.com/vi/8bmOfvhRrRE/hqdefault.jpg" alt="" loading="lazy">
+        <span class="play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="#520082" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
+      </button>
+      <button class="yt" data-id="PkfPrBj1DGE" aria-label="נגן ראיון שני">
+        <img src="https://i.ytimg.com/vi/PkfPrBj1DGE/hqdefault.jpg" alt="" loading="lazy">
+        <span class="play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="#520082" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
+      </button>
+      <button class="yt" data-id="yLNPvtMBm8c" aria-label="נגן ראיון שלישי">
+        <img src="https://i.ytimg.com/vi/yLNPvtMBm8c/hqdefault.jpg" alt="" loading="lazy">
+        <span class="play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="#520082" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
+      </button>
+      <button class="yt" data-id="nsVsxCS-7Zc" aria-label="נגן ראיון רביעי">
+        <img src="https://i.ytimg.com/vi/nsVsxCS-7Zc/hqdefault.jpg" alt="" loading="lazy">
+        <span class="play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="#520082" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== המלצות ==================== -->
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <h2 class="h-sec">מה אומרים עלינו</h2>
+    <div class="grid2 mt24">
+      <article class="quote">
+        <div class="stars" aria-label="חמישה כוכבים">★★★★★</div>
+        <p>הגעתי בלי הרבה תקווה ויצאתי עם סדר יום, עם כוחות ועם דרך ברורה קדימה. תודה על הכל.</p>
+        <div class="who">יגאל</div>
+      </article>
+      <article class="quote">
+        <div class="stars" aria-label="חמישה כוכבים">★★★★★</div>
+        <p>משפחת פניקס היקרה, תודה זו מילה קטנה. הענקתם לי חיים חדשים שלא הכרתי קודם.</p>
+        <div class="who">אורח לשעבר</div>
+      </article>
+      <article class="quote">
+        <div class="stars" aria-label="חמישה כוכבים">★★★★★</div>
+        <p>היחס האישי היה מעל ומעבר. הרגשתי שיש מי שבאמת רואה אותי ולא מוותר עליי.</p>
+        <div class="who">דניאל</div>
+      </article>
+      <article class="quote">
+        <div class="stars" aria-label="חמישה כוכבים">★★★★★</div>
+        <p>רציתי להודות על כל הליווי שקיבלה בתי. אתם החזרתם לה את החיוך ואת הביטחון.</p>
+        <div class="who">אם לבוגרת</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== צור קשר ==================== -->
+<section class="sec formsec" id="contact">
+  <div class="wrap">
+    <h2 class="h-sec">אנחנו פה בשבילך</h2>
+    <p class="p-lead mt16">השאירו פרטים, ואנחנו ניצור איתכם קשר</p>
+    <form class="form leadform" novalidate>
+      <label class="sr-only" for="f2-name">שם מלא</label>
+      <input id="f2-name" name="name" type="text" placeholder="מה השם שלך?" autocomplete="name" required>
+      <label class="sr-only" for="f2-phone">טלפון</label>
+      <input id="f2-phone" name="phone" type="tel" placeholder="טלפון" autocomplete="tel" inputmode="tel" required>
+      <label class="sr-only" for="f2-mail">אימייל</label>
+      <input id="f2-mail" name="email" type="email" placeholder="אימייל" autocomplete="email">
+      <label class="sr-only" for="f2-msg">ההודעה שלך</label>
+      <textarea id="f2-msg" name="message" placeholder="ההודעה שלך"></textarea>
+      <button class="btn btn-dark btn-full" type="submit">שליחה</button>
+      <div class="msg" role="status">תודה, הפרטים התקבלו. נחזור אליכם בהקדם.</div>
+    </form>
+  </div>
+</section>
+
+<!-- ==================== פוטר ==================== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-cols">
+      <div>
+        <h3>פניקס</h3>
+        <p class="tag">ליווי אישי לבניית שגרה יציבה, חיזוק הביטחון האישי ושינוי הדרגתי שמחזיק לאורך זמן.</p>
+        <div class="socials">
+          <a href="https://wa.me/972528437690" target="_blank" rel="noopener" aria-label="וואטסאפ">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.3 14c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.7-.1a11 11 0 01-5.9-5c-.4-.7-.7-1.5-.7-2.2 0-.8.4-1.4.7-1.7.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2 0 .4-.1.5l-.4.5c-.1.1-.2.3-.1.5.4.7 1 1.4 1.7 1.9.3.2.6.4.9.5.2.1.4 0 .5-.1l.6-.7c.1-.2.3-.2.5-.1l1.6.8c.2.1.3.2.3.4 0 .2 0 .5-.1.8z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="פייסבוק">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 22v-9h3l.5-3.5H13V7.3c0-1 .3-1.7 1.8-1.7H17V2.4C16.6 2.4 15.4 2.3 14 2.3c-2.9 0-4.9 1.8-4.9 5V9.5H6V13h3.1v9H13z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="אינסטגרם">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.3A6.5 6.5 0 1018.5 12 6.5 6.5 0 0012 5.5zm0 10.7A4.2 4.2 0 1116.2 12 4.2 4.2 0 0112 16.2zm6.7-10.9a1.5 1.5 0 11-1.5-1.5 1.5 1.5 0 011.5 1.5z"/></svg>
+          </a>
+          <a href="https://t.me/" target="_blank" rel="noopener" aria-label="טלגרם">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3l-3 14.2c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.2.2-.5.5-.9.5l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L7.3 12.6 2.8 11.2c-1-.3-1-1 .2-1.4l17.4-6.7c.8-.3 1.6.2 1.5 1.2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3>יצירת קשר</h3>
+        <ul>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg>
+            <span>שבטי ישראל 29, ראשון לציון</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11 11 0 003.5.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11 11 0 00.56 3.5 1 1 0 01-.25 1z"/></svg>
+            <a href="tel:+972528437690" style="direction:ltr">052-8437690</a>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11 11 0 003.5.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11 11 0 00.56 3.5 1 1 0 01-.25 1z"/></svg>
+            <a href="tel:+972523873235" style="direction:ltr">052-3873235</a>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5z"/></svg>
+            <a href="mailto:zfenikx@gmail.com">zfenikx@gmail.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 כל הזכויות שמורות | <a href="https://phoenix-rehab.com/he/privacy-policy/" target="_blank" rel="noopener" style="text-decoration:underline">מדיניות פרטיות</a></span>
+      <a class="credit" href="https://www.snirdote.co.il" target="_blank" rel="noopener">
+        <img src="data:image/png;base64,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" alt="לוגו סניר" width="240" height="237" loading="lazy">
+        <span>שיווק דיגיטלי</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== הודעת קוקיז ==================== -->
+<div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="הודעת קוקיז">
+  <p>אנחנו משתמשים בקוקיז כדי לתת לך את החוויה הטובה ביותר מהשימוש באתר. הגלישה באתר היא הסכמה לשימוש בקוקיז. מידע נוסף ואפשרות לשלוט בהעדפות שלך אפשר למצוא ב<a href="https://phoenix-rehab.com/he/privacy-policy/" target="_blank" rel="noopener">מדיניות הפרטיות שלנו</a>.</p>
+  <div class="acts">
+    <button class="ok" id="ckOk" type="button">אישור</button>
+    <button class="no" id="ckNo" type="button">רק חיוניים</button>
+  </div>
+</div>
+
+<!-- ==================== מוזיקת רקע ====================
+     להחליף את הנתיב בקובץ המוזיקה שתבחר. הכפתור זוכר את הבחירה של הגולש -->
+<audio id="ambient" loop preload="none">
+  <source src="assets/ambient.mp3" type="audio/mpeg">
+</audio>
+<button class="sound" id="soundBtn" aria-pressed="false" aria-label="הפעלת מוזיקת רקע">
+  <span class="ring" aria-hidden="true"></span>
+  <svg class="off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4zm12.5 3a4.5 4.5 0 00-2.5-4v8a4.5 4.5 0 002.5-4z"/></svg>
+  <svg class="on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4zm12.5 3a4.5 4.5 0 00-2.5-4v8a4.5 4.5 0 002.5-4zM14 2.2v2.1a7.8 7.8 0 010 15.4v2.1a9.9 9.9 0 000-19.6z"/></svg>
+</button>
+
+<!-- ==================== פס פעולה תחתון ==================== -->
+<div class="bar">
+  <a class="w" href="https://wa.me/972528437690" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.3 14c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.7-.1a11 11 0 01-5.9-5c-.4-.7-.7-1.5-.7-2.2 0-.8.4-1.4.7-1.7.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2 0 .4-.1.5l-.4.5c-.1.1-.2.3-.1.5.4.7 1 1.4 1.7 1.9.3.2.6.4.9.5.2.1.4 0 .5-.1l.6-.7c.1-.2.3-.2.5-.1l1.6.8c.2.1.3.2.3.4 0 .2 0 .5-.1.8z"/></svg>
+    וואטספ
+  </a>
+  <a class="p" href="tel:+972528437690">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11 11 0 003.5.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11 11 0 00.56 3.5 1 1 0 01-.25 1z"/></svg>
+    חייגו
+  </a>
+  <a class="m" href="#contact">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5z"/></svg>
+    כתוב לנו
+  </a>
+</div>
+
+<script>
+// נגן יוטיוב בלחיצה
+document.querySelectorAll('.yt').forEach(function(box){
+  box.addEventListener('click', function(){
+    box.innerHTML = '<iframe src="https://www.youtube.com/embed/' + box.dataset.id +
+      '?autoplay=1&rel=0" title="ראיון" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+  });
+});
+
+// ===== הודעת קוקיז =====
+(function(){
+  var box = document.getElementById('cookie');
+  var KEY = 'phx_cookies';
+  if(!localStorage.getItem(KEY)) setTimeout(function(){ box.classList.add('show'); }, 900);
+  function decide(v){ localStorage.setItem(KEY, v); box.classList.remove('show'); }
+  document.getElementById('ckOk').addEventListener('click', function(){ decide('all'); });
+  document.getElementById('ckNo').addEventListener('click', function(){ decide('essential'); });
+})();
+
+// ===== מוזיקת רקע =====
+// דפדפנים לא מרשים ניגון עם קול לפני שהגולש נגע במסך
+// לכן מנסים להפעיל בטעינה, ואם נחסם מפעילים בנגיעה הראשונה
+(function(){
+  var audio = document.getElementById('ambient');
+  var btn = document.getElementById('soundBtn');
+  var KEY = 'phx_sound';
+  var want = localStorage.getItem(KEY) !== 'off';   // ברירת מחדל דלוק
+  audio.volume = 0;
+
+  function fadeTo(target){
+    var step = (target - audio.volume) / 20;
+    var i = 0;
+    var t = setInterval(function(){
+      i++; audio.volume = Math.min(1, Math.max(0, audio.volume + step));
+      if(i >= 20){ clearInterval(t); audio.volume = target; }
+    }, 60);
+  }
+  function start(){
+    audio.play().then(function(){
+      btn.setAttribute('aria-pressed','true');
+      btn.setAttribute('aria-label','כיבוי מוזיקת רקע');
+      fadeTo(0.35);
+    }).catch(function(){ /* נחסם, מחכים לנגיעה */ });
+  }
+  function stop(){
+    audio.pause();
+    btn.setAttribute('aria-pressed','false');
+    btn.setAttribute('aria-label','הפעלת מוזיקת רקע');
+  }
+
+  if(want) start();
+
+  ['pointerdown','keydown','touchstart'].forEach(function(ev){
+    document.addEventListener(ev, function once(){
+      document.removeEventListener(ev, once);
+      if(want && audio.paused) start();
+    }, {once:true});
+  });
+
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    if(audio.paused){ want = true; localStorage.setItem(KEY,'on'); start(); }
+    else { want = false; localStorage.setItem(KEY,'off'); stop(); }
+  });
+
+  // עצירה כשעוברים ללשונית אחרת
+  document.addEventListener('visibilitychange', function(){
+    if(document.hidden && !audio.paused) audio.pause();
+    else if(!document.hidden && want && audio.paused) start();
+  });
+})();
+
+// שליחת טפסים
+// לחיבור אמיתי - להחליף בשליחה ל-Elementor Forms / CRM
+document.querySelectorAll('.leadform').forEach(function(f){
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = f.querySelector('[name=name]'), phone = f.querySelector('[name=phone]'), ok = true;
+    [name, phone].forEach(function(el){ el.classList.remove('err'); });
+    if(!name.value.trim()){ name.classList.add('err'); ok = false; }
+    if(phone.value.replace(/\D/g,'').length < 9){ phone.classList.add('err'); ok = false; }
+    if(!ok){ (name.classList.contains('err') ? name : phone).focus(); return; }
+    if(window.gtag) gtag('event','generate_lead');
+    if(window.fbq) fbq('track','Lead');
+    f.querySelector('.msg').classList.add('show');
+    f.reset();
+  });
+});
+</script>
+
+<!-- רכיב הנגישות של enable, אותו רישיון של האתר הראשי -->
+<script src="https://cdn.enable.co.il/licenses/enable-L17724v0u4f5ol7g-0223-82977/init.js" defer></script>
+
+</body>
+</html>
