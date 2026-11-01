@@ -767,9 +767,10 @@ document.querySelectorAll('.yt').forEach(function(box){
   });
 })();
 
-// שליחת טפסים
-// לחיבור אמיתי - להחליף בשליחה ל-Elementor Forms / CRM
-document.querySelectorAll('.leadform').forEach(function(f){
+// שליחת טפסים ל-Make (JSON)
+var LEAD_HOOK = 'https://hook.eu2.make.com/esv1hbeftx971ddafps69ezkcuowjaav';
+var qs = new URLSearchParams(location.search);
+document.querySelectorAll('.leadform').forEach(function(f, idx){
   f.addEventListener('submit', function(e){
     e.preventDefault();
     var name = f.querySelector('[name=name]'), phone = f.querySelector('[name=phone]'), ok = true;
@@ -777,10 +778,40 @@ document.querySelectorAll('.leadform').forEach(function(f){
     if(!name.value.trim()){ name.classList.add('err'); ok = false; }
     if(phone.value.replace(/\D/g,'').length < 9){ phone.classList.add('err'); ok = false; }
     if(!ok){ (name.classList.contains('err') ? name : phone).focus(); return; }
-    if(window.gtag) gtag('event','generate_lead');
-    if(window.fbq) fbq('track','Lead');
-    f.querySelector('.msg').classList.add('show');
-    f.reset();
+
+    var btn = f.querySelector('[type=submit]'), msg = f.querySelector('.msg');
+    var data = {
+      name: name.value.trim(),
+      phone: phone.value.trim(),
+      email: (f.querySelector('[name=email]') || {}).value || '',
+      message: (f.querySelector('[name=message]') || {}).value || '',
+      form: idx === 0 ? 'main' : 'secondary',
+      page_url: location.href,
+      referrer: document.referrer,
+      utm_source: qs.get('utm_source') || '',
+      utm_medium: qs.get('utm_medium') || '',
+      utm_campaign: qs.get('utm_campaign') || '',
+      utm_term: qs.get('utm_term') || '',
+      utm_content: qs.get('utm_content') || '',
+      gclid: qs.get('gclid') || '',
+      fbclid: qs.get('fbclid') || '',
+      submitted_at: new Date().toISOString()
+    };
+    btn.disabled = true;
+    fetch(LEAD_HOOK, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); })
+      .then(function(){
+        if(window.gtag) gtag('event','generate_lead');
+        if(window.fbq) fbq('track','Lead');
+        msg.textContent = 'תודה, הפרטים התקבלו. נחזור אליכם בהקדם.';
+        msg.classList.add('show');
+        f.reset();
+      })
+      .catch(function(){
+        msg.innerHTML = 'משהו השתבש בשליחה. אפשר לכתוב לנו ישירות <a href="https://wa.me/972528437690" target="_blank" rel="noopener">בוואטסאפ</a>.';
+        msg.classList.add('show');
+      })
+      .finally(function(){ btn.disabled = false; });
   });
 });
 </script>
