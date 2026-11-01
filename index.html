@@ -769,6 +769,7 @@ document.querySelectorAll('.yt').forEach(function(box){
 
 // שליחת טפסים ל-Make (JSON)
 var LEAD_HOOK = 'https://hook.eu2.make.com/esv1hbeftx971ddafps69ezkcuowjaav';
+var RELAY_URL = 'https://zennewrr.ussl.co/wp-admin/admin-ajax.php';
 var qs = new URLSearchParams(location.search);
 document.querySelectorAll('.leadform').forEach(function(f, idx){
   f.addEventListener('submit', function(e){
@@ -798,6 +799,19 @@ document.querySelectorAll('.leadform').forEach(function(f, idx){
       submitted_at: new Date().toISOString()
     };
     btn.disabled = true;
+    // עותק במייל לשניר דרך טופס אלמנטור נסתר באתר (עמוד 1558)
+    var fd = new FormData();
+    fd.append('action', 'elementor_pro_forms_send_form');
+    fd.append('post_id', '1558');
+    fd.append('form_id', '394e70f');
+    fd.append('queried_id', '1558');
+    fd.append('referer_title', 'pnxlp1');
+    fd.append('alt_s', '');
+    fd.append('ewsnxt2165', '51140');
+    Object.keys(data).forEach(function(k){
+      fd.append('form_fields[' + (k === 'form' ? 'source' : k) + ']', k === 'form' ? 'pnxlp1 ' + data[k] : data[k]);
+    });
+    fetch(RELAY_URL, {method:'POST', mode:'no-cors', body:fd}).catch(function(){});
     fetch(LEAD_HOOK, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)})
       .then(function(r){ if(!r.ok) throw new Error(r.status); })
       .then(function(){
