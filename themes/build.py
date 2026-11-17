@@ -15,7 +15,8 @@ for theme, folder in OUT.items():
     h = re.sub(r'https://fonts\.googleapis\.com/css2\?[^"]+',
                f'https://fonts.googleapis.com/css2?{FONTS[theme]}&display=swap', src, count=1)
     h = h.replace('</style>', css + '\n</style>', 1)
-    h = h.replace('src="assets/', 'src="../assets/')
+    h = h.replace('src="assets/', 'src="../assets/').replace("url('assets/", "url('../assets/")
+    h = h.replace('href="privacy.html"', 'href="../privacy.html"')
     h = h.replace('<head>', '<head>\n<meta name="robots" content="noindex, nofollow">', 1)
     os.makedirs(folder, exist_ok=True)
     open(f'{folder}/index.html', 'w', encoding='utf-8').write(h)
