@@ -1,0 +1,72 @@
+/* ===== סגנון A · מרווה קליני רגוע ===== */
+:root{
+  --purple:#2F5D50;
+  --grad:linear-gradient(90deg,#2F5D50 0%,#2F5D50 100%);
+  --orange:#C9A86A;
+  --gray:#EEF2EC;
+  --gray2:#DFE6DC;
+  --ink:#1E2B26;
+  --body:#2B3631;
+  --hero-txt:#FFFFFF;
+}
+body{font-family:"Heebo",Arial,sans-serif;background:#FAFAF6}
+h1,h2,h3,.person .name,.foot h3{font-family:"Frank Ruhl Libre","Heebo",serif;font-weight:700;letter-spacing:-.01em}
+.h-sec{position:relative;padding-bottom:18px}
+.h-sec::after{content:"";position:absolute;bottom:0;left:50%;width:56px;height:2px;background:#C9A86A;transform:translateX(-50%)}
+.formsec .h-sec::after{background:#C9A86A}
+:focus-visible{outline-color:#2F5D50}
+
+.btn{border-radius:6px;box-shadow:none;font-weight:600;letter-spacing:.01em}
+.btn-dark{background:#C9A86A;color:#1E2B26;border-radius:6px}
+.btn:hover{filter:brightness(1.08)}
+
+.topbar{background:#1E2B26}
+.topbar svg{fill:#C9A86A}
+.head{box-shadow:none;border-bottom:1px solid #E3E7E1;background:#FAFAF6}
+.nav{background:#FAFAF6}
+.nav a:hover{color:#2F5D50}
+
+.hero::after{background:linear-gradient(180deg,rgba(20,40,34,.55) 0%,rgba(20,40,34,.82) 100%);opacity:1}
+.h-hero{font-weight:700}
+.overlap{background:#FAFAF6;border-radius:0;margin-top:0;border-top:4px solid #C9A86A}
+
+.strip img{border-radius:4px}
+.card,.person,.doc,.quote{box-shadow:none;border:1px solid #DFE6DC;border-radius:8px;background:#fff}
+.ico{border-radius:50%;background:#E6EEE8}
+.ico svg{fill:#2F5D50}
+.pcard{border-radius:8px}
+.pcard .inner{border-radius:6px;background:rgba(250,250,246,.95)}
+.doc img{border-radius:4px}
+.yt{border-radius:6px}
+.quote{border-inline-start:3px solid #2F5D50}
+.quote .who{color:#2F5D50}
+.stars{color:#C9A86A}
+
+.formsec{background:#2F5D50}
+.formsec .p-lead{color:#E3ECE6}
+.mini{color:#CFDDD4}
+.form input,.form textarea{border-radius:6px;border:1px solid transparent}
+.form input:focus,.form textarea:focus{border-color:#C9A86A;outline:none}
+
+.foot{background:#1E2B26;color:#C9D3CD}
+.foot svg{fill:#C9A86A}
+.foot a:hover{color:#C9A86A}
+.socials a:hover{background:#C9A86A}
+.foot-bottom{color:#9AA8A0}
+
+.bar .w{background:#25A35A}
+.bar .p{background:#C9A86A;color:#1E2B26}
+.bar .p svg{fill:#1E2B26}
+.bar .m{background:#2F5D50}
+.sound{box-shadow:0 6px 16px rgba(30,43,38,.35)}
+.sound .ring{border-color:rgba(47,93,80,.45)}
+.cookie{border-radius:8px}
+.cookie button{border-radius:6px}
+.cookie a{color:#2F5D50}
+
+@media(min-width:768px){
+  .overlap{border-radius:0}
+  .pcard{border-radius:10px}
+  .pcard .inner{border-radius:6px}
+  .strip img{border-radius:6px}
+}

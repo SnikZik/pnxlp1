@@ -1,0 +1,71 @@
+/* ===== סגנון C · חם ואנושי, אדמה וחול ===== */
+:root{
+  --purple:#B5562F;
+  --grad:linear-gradient(90deg,#C8643A 0%,#A94A26 100%);
+  --orange:#E8A23C;
+  --gray:#FBF1E6;
+  --gray2:#F3E3D2;
+  --ink:#3A2418;
+  --body:#4A3427;
+  --hero-txt:#FFF6EC;
+}
+body{font-family:"Assistant","Heebo",Arial,sans-serif;background:#FFFBF6}
+h1,h2,h3,.person .name,.foot h3{font-family:"Varela Round","Assistant",sans-serif;font-weight:400;color:#3A2418}
+.h-hero{color:#FFF6EC}
+.h-sub{color:#FFE9D2}
+:focus-visible{outline-color:#B5562F}
+
+.btn{border-radius:18px;box-shadow:0 10px 24px rgba(181,86,47,.28);font-weight:700}
+.btn-dark{background:#3A2418;border-radius:18px}
+
+.topbar{background:#3A2418}
+.topbar svg{fill:#E8A23C}
+.head{background:#FFFBF6;box-shadow:0 2px 14px rgba(58,36,24,.08)}
+.nav{background:#FFFBF6;border-top-color:#F3E3D2}
+.nav a:hover{color:#B5562F}
+
+.hero::after{background:linear-gradient(160deg,rgba(58,36,24,.78) 20%,rgba(169,74,38,.45) 100%);opacity:1}
+.overlap{background:#FFFBF6;border-radius:48px 48px 0 0}
+
+.strip img{border-radius:28px}
+.card,.person,.quote{background:#fff;border-radius:28px;box-shadow:0 14px 30px rgba(120,64,30,.10)}
+.doc{border-radius:22px;box-shadow:0 14px 30px rgba(120,64,30,.10)}
+.ico{background:#FBE3D3;border-radius:50%}
+.ico svg{fill:#B5562F}
+.pcard{border-radius:32px}
+.pcard .inner{background:rgba(255,251,246,.94);border-radius:22px}
+.doc img{background:#FFF8F0;border-color:#F3E3D2;border-radius:14px}
+.person img{background:#F3E3D2}
+.yt{border-radius:24px}
+.yt .play span{background:#FFF6EC}
+.quote{background:#FFF4E8;box-shadow:none}
+.quote .who{color:#B5562F}
+.stars{color:#E8A23C}
+
+.formsec{background:#B5562F}
+.formsec .p-lead{color:#FFE9D2}
+.mini{color:#FFD9BF}
+.form input,.form textarea{border-radius:16px}
+.msg{border-radius:16px}
+
+.foot{background:#3A2418;color:#E7D3C3}
+.foot svg{fill:#E8A23C}
+.foot a:hover{color:#E8A23C}
+.socials a:hover{background:#E8A23C}
+.foot-bottom{color:#BFA390}
+
+.bar .w{background:#25D366}
+.bar .p{background:#E8A23C}
+.bar .m{background:#B5562F}
+.sound{box-shadow:0 8px 20px rgba(169,74,38,.35)}
+.sound .ring{border-color:rgba(181,86,47,.45)}
+.cookie{border-radius:22px 22px 0 0}
+.cookie a{color:#B5562F}
+
+@media(min-width:768px){
+  .overlap{border-radius:80px 80px 0 0}
+  .pcard{border-radius:44px}
+  .pcard .inner{border-radius:28px}
+  .strip img{border-radius:36px}
+  .cookie{border-radius:22px}
+}

@@ -1,0 +1,86 @@
+/* ===== סגנון B · לילה וזהב, יוקרתי ===== */
+:root{
+  --purple:#C9A45C;
+  --grad:linear-gradient(90deg,#D8B56E 0%,#B88C3E 100%);
+  --orange:#C9A45C;
+  --gray:#121826;
+  --gray2:#1A2233;
+  --ink:#F4EFE6;
+  --body:#D6D2CA;
+  --white:#0C111C;
+  --hero-txt:#F4EFE6;
+}
+body{font-family:"Assistant",Arial,sans-serif;background:#0C111C;color:#D6D2CA}
+h1,h2,h3,.person .name,.foot h3{font-family:"Bellefair","Assistant",serif;font-weight:400;color:#F4EFE6;letter-spacing:.01em}
+.h-sub{color:#E9E3D6}
+.h-sec{color:#F4EFE6}
+.p-card,.p-lead{color:#C9C4BA}
+:focus-visible{outline-color:#D8B56E}
+
+.btn{color:#0C111C;border-radius:2px;box-shadow:0 10px 26px rgba(201,164,92,.18);font-weight:700;letter-spacing:.03em}
+.btn-dark{background:#D8B56E;color:#0C111C;border-radius:2px}
+
+.topbar{background:#070A11;border-bottom:1px solid rgba(201,164,92,.25)}
+.topbar a{color:#E9E3D6}
+.topbar svg{fill:#D8B56E}
+.head{background:#F4EFE6;box-shadow:none;border-bottom:2px solid #C9A45C}
+.nav{background:#F4EFE6;border-top-color:rgba(12,17,28,.08)}
+.nav a{color:#0C111C}
+.nav a:hover{color:#9C7430}
+
+.hero::after{background:linear-gradient(180deg,rgba(7,10,17,.55) 0%,rgba(7,10,17,.9) 100%);opacity:1}
+.overlap{background:#0C111C;border-radius:0;margin-top:0}
+
+.strip{-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.strip img{border-radius:2px;filter:saturate(.85)}
+.card,.person,.doc,.quote{background:#121826;border:1px solid rgba(201,164,92,.28);border-radius:2px;box-shadow:none}
+.ico{background:transparent;border:1px solid rgba(201,164,92,.5);border-radius:50%}
+.ico svg{fill:#D8B56E}
+.pcard{border-radius:2px}
+.pcard .inner{background:rgba(12,17,28,.88);border-radius:2px;border-top:1px solid rgba(201,164,92,.5)}
+.pcard .inner .h-card{color:#F4EFE6}
+.pcard .inner .p-card{color:#D6D2CA}
+.doc img{background:#F4F1EA;border-color:transparent;border-radius:0}
+.doc figcaption,.person .role{color:#ABA699}
+.person img{background:#1A2233}
+.yt{border-radius:2px;border:1px solid rgba(201,164,92,.28)}
+.quote p{color:#D6D2CA}
+.quote .who{color:#D8B56E}
+.stars{color:#D8B56E}
+
+.formsec{background:#121826;border-top:1px solid rgba(201,164,92,.22);border-bottom:1px solid rgba(201,164,92,.22)}
+.formsec .p-lead{color:#C9C4BA}
+.mini{color:#9A968D}
+.form input,.form textarea{background:#0C111C;color:#F4EFE6;border:1px solid rgba(201,164,92,.35);border-radius:2px}
+.form input::placeholder,.form textarea::placeholder{color:#8D897F}
+.form input:focus,.form textarea:focus{border-color:#D8B56E;outline:none}
+.msg{border-radius:2px}
+
+.foot{background:#070A11;color:#ABA699}
+.foot svg{fill:#D8B56E}
+.foot a:hover{color:#D8B56E}
+.socials a{background:rgba(201,164,92,.12)}
+.socials a:hover{background:#D8B56E}
+.foot-bottom{border-top-color:rgba(201,164,92,.2);color:#8D897F}
+.credit{color:#F4EFE6}
+
+.bar .w{background:#1F9E57}
+.bar .p{background:#D8B56E;color:#0C111C}
+.bar .p svg{fill:#0C111C}
+.bar .m{background:#1A2233}
+.sound svg{fill:#0C111C}
+.sound .ring{border-color:rgba(216,181,110,.45)}
+.cookie{background:#121826;color:#D6D2CA;border:1px solid rgba(201,164,92,.3)}
+.cookie a{color:#D8B56E}
+.cookie .ok{color:#0C111C}
+.cookie .no{background:#1A2233;color:#D6D2CA}
+
+@media(min-width:768px){
+  .overlap{border-radius:0}
+  .pcard,.pcard .inner,.strip img{border-radius:2px}
+}
+.bar a{color:#fff}
+.bar .p{color:#0C111C}
+.formsec,.formsec .h-sec{color:#F4EFE6}
+.sound{color:#0C111C}
+.btn-sm{color:#0C111C}
